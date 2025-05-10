@@ -1,0 +1,28 @@
+Q1:
+    For a commercial software,misidentifing the language means that users' belief
+    in it will decrease and they may turn to others apps and this one will lose competition.
+    For goverment,misidentification may lead to loss of etiquette and conflicts between each other.
+Q2:
+    1.text written by lauguage out of those in given LanguageIdentification text;
+    2.text written by ancient language which is not used these days but still meaningful when
+      studying ancient time.
+Q3:
+    1.Ensure that all languages are included;
+    2.Give a chance to improve methods for studying ancient time.
+
+
+
+Q4:
+    I would pick plan 2 because I think it's more important to learn deeply from history and
+    this language should not be missing.
+
+
+
+Q5:
+    Fisrtly, this tool need to indentify at least language that I have found.Then, I need to test it
+    in real study work by cooporate with people who specialized in ancient language. If I have modified
+    it until getting good results, I will release it and highlighten the advantage of identifing ancient
+    language and primarily advertise it for its target peaple;
+
+
+
