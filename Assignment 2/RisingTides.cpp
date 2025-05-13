@@ -1,16 +1,39 @@
 #include "RisingTides.h"
 #include "GUI/SimpleTest.h"
 #include "queue.h"
+#include "set.h"
 using namespace std;
 
 Grid<bool> floodedRegionsIn(const Grid<double>& terrain,
                             const Vector<GridLocation>& sources,
                             double height) {
-    /* TODO: Delete this line and the next four lines, then implement this function. */
-    (void) terrain;
-    (void) sources;
-    (void) height;
-    return {};
+    /*
+        实现思路：1.将所有sources入队列  队列采用GridLocation格式
+                2.逐步拓展直至无法进行（队列为空） 同时注意返回对应的答案grid
+    */
+    vector<vector<int>> direction = {{0,-1},{0,1},{1,0},{-1,0}};
+    Set<GridLocation> visited;
+    Grid<bool> res = Grid(terrain.numRows(),terrain.numCols(),false);
+    Queue<GridLocation> queue;
+    for(auto it : sources){
+        if(height >= terrain.get(it)){
+            queue.enqueue(it);/* 队列初始化 */
+            res.set(it,true);
+            visited.add(it);
+        }
+    }
+    while(!queue.isEmpty()){
+        GridLocation location = queue.dequeue();
+        for(int i = 0 ; i < 4 ; i++){
+            GridLocation newLocation = GridLocation(location.row + direction[i][0],location.col + direction[i][1]);
+            if(terrain.inBounds(newLocation) && terrain.get(newLocation)<= height && !visited.contains(newLocation) ){
+                res.set(newLocation,true);
+                queue.enqueue(newLocation);
+                visited.add(newLocation);
+            }
+        }
+    }
+    return res;
 }
 
 
